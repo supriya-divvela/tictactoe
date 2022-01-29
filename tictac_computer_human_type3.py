@@ -31,7 +31,6 @@ while(m=='y'):
                 flag2=False
                 for i in list(combinations(t1,2)):
                     if (15-sum(i)) in q and (l[q.index(15-sum(i))]==' '):
-                        print("hello")
                         flag2=True
                         l[q.index(15-sum(i))]=m
                         break
@@ -39,7 +38,6 @@ while(m=='y'):
                     flag3=False
                     for i in list(combinations(t2,2)):
                         if (15-sum(i)) in q and (l[q.index(15-sum(i))]==' '):
-                            print("Hii")
                             flag3=True
                             l[q.index(15-sum(i))]=m
                             break
