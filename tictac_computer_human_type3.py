@@ -28,16 +28,17 @@ while(m=='y'):
                     if l[i]=='X':t1.append(q[i])
                     elif l[i]=='O':t2.append(q[i])
                     else:t3.append(q[i])
+                print(t1,t2,t3)
                 flag2=False
                 for i in list(combinations(t1,2)):
-                    if (15-sum(i)) in q and (l[q.index(15-sum(i))]==' '):
+                    if (15-sum(i) in q) and (l[q.index(15-sum(i))]==' '):
                         flag2=True
                         l[q.index(15-sum(i))]=m
                         break
                 if flag2==False:
                     flag3=False
                     for i in list(combinations(t2,2)):
-                        if (15-sum(i)) in q and (l[q.index(15-sum(i))]==' '):
+                        if (15-sum(i) in q) and (l[q.index(15-sum(i))]==' '):
                             flag3=True
                             l[q.index(15-sum(i))]=m
                             break
