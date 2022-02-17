@@ -37,9 +37,9 @@ def dfs(v,x,y):
     v.append(x)
     h.append(y)
     if x[2]==0:
-        print("{},({},{},1)".format(x,3-x[0],3-x[1]))
+        print("({},{},{}),({},{},1)".format(x[0],x[1],x[2],3-x[0],3-x[1]))
     else:
-        print("{},({},{},0)".format(x,3-x[0],3-x[1]))
+        print("({},{},{}),({},{},0)".format(x[0],x[1],x[2],3-x[0],3-x[1]))
     if x==(0,0,0):sys.exit()
     t1,t2=fun(x,y)
     for i,j in zip(t1,t2):
