@@ -43,12 +43,15 @@ d={('s','a'):3,
 h={'s':11.5,'a':10.1,'b':5.8,'c':3.4,'d':9.2,'e':7.1,'f':3.5,'g':0}
 v=paths(p,'s','g')
 k=list(filter(lambda x:x[-1]=='g',v))
-r=[]
-for i in k:
-    z=distance(i)
-    r.append((i,z))
-r=sorted(r,key=lambda x:x[1])
-print(f"The Path and distance is {r[0][0]} and {r[0][1]}")
+if k==[]:
+    print("No such node exists")
+else:
+    r=[]
+    for i in k:
+        z=distance(i)
+        r.append((i,z))
+    r=sorted(r,key=lambda x:x[1])
+    print(f"The Path and distance is {r[0][0]} and {r[0][1]}")
 
 '''
 output:The Path and distance is ['s', 'd', 'e', 'f', 'g'] and 13.5
