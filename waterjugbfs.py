@@ -23,20 +23,26 @@ res1,res2=map(int,input().split())
 G={}
 cp.append((0,0))
 cl.append((0,0))
-while cp:
-    q=cp.pop(0)
-    s=func(q[0],q[1])
-    G[q]=[]
-    for i in s:
-        if i not in cl:
-            G[q].append(i)
-    for i in s:
-        if i not in cl:
-            cl.append(i)
-            cp.append(i)
-            if i==(res1,res2):
-                break
-print("The path in BFS is:",end=" ")
-for i in find_all_paths(find_all_parents(G, (0,0)), (0,0), (res1,res2)):
-    for j in range(0,len(i),2):
-        print(f"({i[j]},{i[j+1]})",end=" ")
+if 0<=res1<=m and 0<=res2<=n:
+    while cp:
+        q=cp.pop(0)
+        s=func(q[0],q[1])
+        G[q]=[]
+        for i in s:
+            if i not in cl:
+                G[q].append(i)
+        for i in s:
+            if i not in cl:
+                cl.append(i)
+                cp.append(i)
+                if i==(res1,res2):
+                    break
+    if find_all_paths(find_all_parents(G, (0,0)), (0,0), (res1,res2))!=[]:
+        print("The path in BFS is:",end=" ")
+        for i in find_all_paths(find_all_parents(G, (0,0)), (0,0), (res1,res2)):
+            for j in range(0,len(i),2):
+                print(f"({i[j]},{i[j+1]})",end=" ")
+    else:
+        print("It is not possible...")
+else:
+    print("Please enter appropriate values...")
