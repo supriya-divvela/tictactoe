@@ -83,6 +83,8 @@ for i in range(4,n):
     print()
 
 '''
+input:11
+output:
 The path in BFS if boat capaticy is 4:
 (11,11,1),(0,0,0)
 (11,9,0),(0,2,1)
