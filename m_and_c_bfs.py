@@ -50,7 +50,7 @@ def f(p,q):
         else:return False
     else:return False
 n=int(input())
-for i in range(4,n):
+for i in range(2,n):
     temp=i
     G={}
     e=list(filter(lambda x:sum(x)<i+1,list(product(list(range(i+1)),repeat=2))))
@@ -75,16 +75,24 @@ for i in range(4,n):
                 s1.append(i)
                 s2.append(j)
     print(f"The path in BFS if boat capaticy is {temp}:")
-    for i in bfspath(G,(n,n,1),(0,0,0)):
-        if i[2]==1:
-            print("({},{},{}),({},{},0)".format(i[0],i[1],i[2],n-i[0],n-i[1]))
-        else:
-            print("({},{},{}),({},{},1)".format(i[0],i[1],i[2],n-i[0],n-i[1]))
+    if bfspath(G,(n,n,1),(0,0,0))==None:
+        print("Not Possible")
+    else:
+        for i in bfspath(G,(n,n,1),(0,0,0)):
+            if i[2]==1:
+                print("({},{},{}),({},{},0)".format(i[0],i[1],i[2],n-i[0],n-i[1]))
+            else:
+                print("({},{},{}),({},{},1)".format(i[0],i[1],i[2],n-i[0],n-i[1]))
     print()
-
 '''
 input:11
 output:
+The path in BFS if boat capaticy is 2:
+Not Possible
+
+The path in BFS if boat capaticy is 3:
+Not Possible
+
 The path in BFS if boat capaticy is 4:
 (11,11,1),(0,0,0)
 (11,9,0),(0,2,1)
