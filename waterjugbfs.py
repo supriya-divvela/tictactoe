@@ -1,15 +1,15 @@
-from collections import defaultdict
-def find_all_parents(G, s):
-    Q=[s]
-    parents = defaultdict(set)
-    while len(Q):
-        v = Q.pop(0)
-        for w in G[v]:
-            parents[w].add(v)
-            Q.append(w)
-    return parents
-def find_all_paths(parents, a, b):
-    return [a] if a == b else [y+b for x in list(parents[b]) for y in find_all_paths(parents, a, x)]
+def find_all_paths(G,start,goal):
+    o,c=[[start]],[[start]]
+    while len(o):
+        t=o.pop(0)
+        for i in G[t[-1]]:
+            if i not in list(t):
+                q=list(t)
+                q.append(i)
+                c.append(q)
+                o.append(q)
+    c=list(filter(lambda x:x[-1]==goal,c))
+    return c
 def func(x,y):
     l=[(0,y),(x,0),(m,y),(x,n)]
     if (x+y)<=m and y>0:l.append((x+y,0))
@@ -18,8 +18,8 @@ def func(x,y):
     if (x+y)>=n and x>0:l.append((x-(n-y),n))
     return list(set(l))
 cp,cl,k=[],[],[]
-m,n=map(int,input().split())
-res1,res2=map(int,input().split())
+m,n=map(int,input("Enter 2 jug capacties:").split())
+res1,res2=map(int,input("Enter resultant capacities of 2 jug:").split())
 G={}
 cp.append((0,0))
 cl.append((0,0))
@@ -37,12 +37,16 @@ if 0<=res1<=m and 0<=res2<=n:
                 cp.append(i)
                 if i==(res1,res2):
                     break
-    if find_all_paths(find_all_parents(G, (0,0)), (0,0), (res1,res2))!=[]:
-        print("The path in BFS is:",end=" ")
-        for i in find_all_paths(find_all_parents(G, (0,0)), (0,0), (res1,res2)):
-            for j in range(0,len(i),2):
-                print(f"({i[j]},{i[j+1]})",end=" ")
+    if find_all_paths(G,(0,0),(res1,res2))!=[]:
+        print("The path in BFS is:",find_all_paths(G,(0,0),(res1,res2)))
     else:
         print("It is not possible...")
 else:
     print("Please enter appropriate values...")
+'''
+input:
+Enter 2 jug capacties:5 3
+Enter resultant capacities of 2 jug:4 0
+output:
+The path in BFS is: [[(0, 0), (5, 0), (2, 3), (2, 0), (0, 2), (5, 2), (4, 3), (4, 0)]]
+'''
