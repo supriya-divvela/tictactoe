@@ -27,3 +27,58 @@ while(m=='y'):
     if flag!=True:
         print("Its is tie game....!")
     m=input("Do u want to play again(y/n):").lower()
+    
+'''
+output:
+ | | |
+-+-+-+
+ | | |
+-+-+-+
+ | | |
+-+-+-+
+Enter Who will play first:(X/O):X
+Enter in which position u want to place X:5
+ | | |
+-+-+-+
+ |X| |
+-+-+-+
+ | | |
+-+-+-+
+Enter in which position u want to place O:1
+O| | |
+-+-+-+
+ |X| |
+-+-+-+
+ | | |
+-+-+-+
+Enter in which position u want to place X:9
+O| | |
+-+-+-+
+ |X| |
+-+-+-+
+ | |X|
+-+-+-+
+Enter in which position u want to place O:7
+O| | |
+-+-+-+
+ |X| |
+-+-+-+
+O| |X|
+-+-+-+
+Enter in which position u want to place X:3
+O| |X|
+-+-+-+
+ |X| |
+-+-+-+
+O| |X|
+-+-+-+
+Enter in which position u want to place O:4
+O| |X|
+-+-+-+
+O|X| |
+-+-+-+
+O| |X|
+-+-+-+
+O has win the game
+Do u want to play again(y/n):n
+'''
