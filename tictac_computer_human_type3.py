@@ -73,3 +73,60 @@ while(m=='y'):
             c+=1
     if flag!=True:print("Its is tie game....!")
     m=input("Do u want to play again(y/n):").lower()
+'''
+output:
+ | | |
+-+-+-+
+ | | |
+-+-+-+
+ | | |
+-+-+-+
+Enter Who will play first X(computer)/O(human):O
+Enter in which position u want to place O:3
+Humans board is:
+ | |O|
+-+-+-+
+ | | |
+-+-+-+
+ | | |
+-+-+-+
+Computers board is:
+ | |O|
+-+-+-+
+ |X| |
+-+-+-+
+ | | |
+-+-+-+
+Enter in which position u want to place O:2
+Humans board is:
+ |O|O|
+-+-+-+
+ |X| |
+-+-+-+
+ | | |
+-+-+-+
+Computers board is:
+X|O|O|
+-+-+-+
+ |X| |
+-+-+-+
+ | | |
+-+-+-+
+Enter in which position u want to place O:4
+Humans board is:
+X|O|O|
+-+-+-+
+O|X| |
+-+-+-+
+ | | |
+-+-+-+
+Computers board is:
+X|O|O|
+-+-+-+
+O|X| |
+-+-+-+
+ | |X|
+-+-+-+
+X has win the game
+Do u want to play again(y/n):n
+'''
