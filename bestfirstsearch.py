@@ -35,6 +35,9 @@ else:
             if i not in cl:ol.append((i,h[i]))
         print([i[0] for i in ol],cl)
 '''
+input:
+s i
+2
 output:
 ['s'] []
 ['a', 'b', 'c'] ['s']
